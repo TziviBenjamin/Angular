@@ -1,0 +1,48 @@
+       <nav>
+  <a routerLink="/comp1">comp1</a>
+  <br>
+  <a routerLink="/comp2">comp2</a>
+  <br>
+   <a routerLink="/comp3">comp3</a>
+   <br>
+    <a routerLink="/comp4">comp4</a>
+    <br>
+  <a routerLink="/comp1/5">comp1 id</a>
+</nav>
+
+<router-outlet></router-outlet>
+ <h2>טופס הרשמה</h2>
+
+<form>
+  <label> user name:</label>
+  <input type="text" name="username" [(ngModel)]="userName" required>
+
+  <label>age:</label>
+  <input type="number" name="age" [(ngModel)]="age" required>
+
+  <label>email:</label>
+  <input type="email" name="email" [(ngModel)]="email" required>
+
+  <label>agree to terms:</label>
+  <input type="checkbox" name="agree" [(ngModel)]="agreedToTerms " required > 
+  
+</form>
+
+<button 
+  type="button" 
+  (click)="submit()" 
+  [disabled]="!userName || !email || !age || !agreedToTerms"
+  style="width:100px; height:20px;">
+  submit
+</button>
+
+<h2>list of users:</h2>
+@for (s of userList; track s){
+    <div>user name: {{s.name}}</div>
+    <div>user age: {{s.age}}</div>
+    <div>user email: {{s.email}}</div>
+ 
+   <br>
+         
+        }
+  
