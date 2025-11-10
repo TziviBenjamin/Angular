@@ -1,0 +1,11 @@
+<div style="display: flex;">
+    <div style="width: 50%; display: block;">
+        @for (item of items; track item){
+        <app-item [itemDetails]="item" [storeItem]="true" (addItemEvent)="addItemParent($event)"></app-item>
+        }
+    </div>
+
+    <div style="width: 50%; display: block;">
+        <app-bag [items]="addedItem"></app-bag>
+    </div>
+</div>
