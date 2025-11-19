@@ -1,0 +1,26 @@
+<p>drivers works!</p>
+
+<button (click)="getDrivers1()" style="width:100px; height: 20px;">Get Drivers</button>
+
+<button (click)="addDriver()" style="width:100px; height: 20px;">Post Driver</button>
+
+
+<ul>
+    <li *ngFor = "let driver of drivers">
+        ID: {{driver.id}} , Name: {{driver.name }}
+        <button (click)="deleteDriver(driver.id!)" style="width:100px; height: 20px;">Delete Driver</button>
+        <button (click)="putDriver(driver.id!)" style="width:100px; height: 20px;">Put Driver</button>
+    </li>
+   
+</ul>
+
+
+
+
+<ul>
+    <li *ngFor="let driver of drivers">
+        ID: {{driver.id}} , Name: {{driver.name }}
+        <button (click)="deleteDriver(driver.id!)" style="width:100px; height: 20px;">Delete</button>
+        <button (click)="putDriver(driver.id!)" style="width:100px; height: 20px;">Put</button>
+    </li>
+</ul>
